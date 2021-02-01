@@ -9,9 +9,7 @@
 3、将MP4动画转换为gif文件
 
 
-### 1、安装Manim
-
-Ubunut 16.04.6 LTS安装依赖库
+### 1、Ubunut 16.04.6 LTS安装Manim
 
 - [x]  直接使用pip install manimlib命令安装，但是会有以下报错
 
