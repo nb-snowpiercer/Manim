@@ -2,14 +2,6 @@
 
 ### 任务目标
 
-1、Ubuntu16.04 LTS安装Python3.7
-
-2、Python3.7源代码的编译与安装
-
-3、删除Python3.5的软链接，然后替换Python3.7软链接，然后替换so文件
-
-### 相关知识
-
 1、安装相关库文件
 
 2、manim生成动画
@@ -18,8 +10,6 @@
 
 
 ### 1、安装Manim
-
-   虽然Manim已经支持Python3.7的，不过安装起来还是比较麻烦，在Ubantu18.04上直接使用安装的过程如下：
 
 Ubunut 16.04.6 LTS安装依赖库
 
@@ -65,10 +55,7 @@ sudo pip install pycairo --upgrade --ignore-installed pycairo
 ```python
 python setup.py install
 ```
-
- 即可完成安装了。
-
- windows下安装manim实在太痛苦了，得把c的编译环境，git for windows等等通通装一遍，不建议尝试，如果执意不想放弃windows请考虑在ubantu虚拟机装manim
+即可完成安装了。
 
 ### 2、体验Manim
 
@@ -78,10 +65,9 @@ python setup.py install
 sudo apt-get  install  smplayer   #安装MP4播放器
 manim example_scenes.py  -pl      #生成视频文件
 
-python extract_scene.py example_scenes.py SquareToCircle -pl
+manim extract_scene.py example_scenes.py SquareToCircle -pl
 ```
-
-   2.manim例程概述 
+- [x] manim例程概述 
 
    打开manim目录下的example_scenes.py找到“class SquareToCircle”一段,这也就是我们刚刚生成动图的代码具体如下：
 
@@ -98,13 +84,13 @@ class SquareToCircle(Scene):
         self.play(FadeOut(square))#圆形淡出
 ```
 
-​    其中第1、2行circle = Circle()和 square = Square()其实就是定义圆形和正方形两个物体，后面使用在第3行调用flip()函数将正方形放到正确的位置上。然后调用第4行调用rotate()函数，在逆时针方向旋转3/8pi的角度。第5行调用set_fill()将圆形的填充颜色设置为粉红色，不透明度设置为0.5，具体也可以参考我上面的注释。以上这些参数都可以自行修改设置，改好之后再调用
+- [x]  第1、2行circle = Circle()和 square = Square()其实就是定义圆形和正方形两个物体，后面使用在第3行调用flip()函数将正方形放到正确的位置上。然后调用第4行调用rotate()函数，在逆时针方向旋转3/8pi的角度。第5行调用set_fill()将圆形的填充颜色设置为粉红色，不透明度设置为0.5，具体也可以参考我上面的注释。以上这些参数都可以自行修改设置，改好之后再调用
 
 ```bash
-python extract_scene.py example_scenes.py SquareToCircle -pl
+manim extract_scene.py example_scenes.py SquareToCircle -pl
 ```
 
- 就能重新生成好新的图像。 当然这只是manim的最简单入门的用法，也可以定义许多其它的方法，比如这个。
+就能重新生成好新的图像。 当然这只是manim的最简单入门的用法，也可以定义许多其它的方法，比如这个。
 
 将mp4文件保存为gif文件
 
